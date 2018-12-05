@@ -21,7 +21,7 @@ function get1xd($numeritos) {
 $asdfg = getxd("insertar");
 $asddsa = get1xd("numeritos");
 // preparar consultas
-pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatos (nombre, numero) VALUES ($1, $2)');
+pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatos (asesino, muertes) VALUES ($1, $2)');
 pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
 // ejecutar consultas
 pg_execute($conexion, "sql3", array("$asdfg", "$asddsa"));
@@ -33,7 +33,7 @@ header('Access-Control-Allow-Origin: *');
 // imprimir resultado
 $gente = array();
 while ($fila = pg_fetch_assoc($resultado)) {
-  $fila["numero"] = intval($fila["numero"]);
+  $fila["muertes"] = intval($fila["muertes"]);
   array_push($gente, $fila);
 }
 echo json_encode($gente);
