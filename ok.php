@@ -9,7 +9,7 @@ $conexion = pg_connect(
   " password=" . $datos["pass"]);
 
 // preparar consultas
-pg_prepare($conexion, "sql4", 'SELECT * FROM datosunity');
+pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
 // ejecutar consultas
 $resultado = pg_execute($conexion, "sql4", array());
 // indicar que el resultado es JSON
