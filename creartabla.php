@@ -30,6 +30,7 @@ pg_prepare($conexion, "sql6", 'INSERT INTO XerathDatosxd (nombre, contraseña) V
 pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
 // ejecutar consultas
 pg_execute($conexion, "sql1", array());
+pg_execute($conexion, "sql7", array());
 pg_execute($conexion, "sql2", array());
 pg_execute($conexion, "sql3", array("$asdfg", "$asddsa"));
 pg_execute($conexion, "sql5", array());
