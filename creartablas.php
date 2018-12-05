@@ -10,7 +10,7 @@ $conexion = pg_connect(
 
 $asdfg = getxd("insertar");
 // preparar consultas
-pg_prepare($conexion, "sql2", 'CREATE TABLE XerathDatos (nombre VARCHAR(30), numero INT)');
+pg_prepare($conexion, "sql2", 'CREATE TABLE XerathDatos (asesino VARCHAR(30), muertes INT)');
 pg_prepare($conexion, "sql3", 'CREATE TABLE XerathDatosxd (usuario VARCHAR(20), contrasena VARCHAR(20))');
 // ejecutar consultas
 pg_execute($conexion, "sql2", array());
