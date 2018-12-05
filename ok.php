@@ -9,9 +9,15 @@ $conexion = pg_connect(
   " password=" . $datos["pass"]);
 
 // preparar consultas
+pg_prepare($conexion, "sql1", 'DROP TABLE IF EXISTS XerathDatos');
+pg_prepare($conexion, "sql2", 'DROP TABLE IF EXISTS XerathDatos');
 pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
+pg_prepare($conexion, "sql3", 'SELECT * FROM XerathDatosxd');
 // ejecutar consultas
-$resultado = pg_execute($conexion, "sql4", array());
+pg_execute($conexion, "sql1", array());
+pg_execute($conexion, "sql2", array());
+$resultado = pg_execute($conexion, "sql3", array());
+$resultado1 = pg_execute($conexion, "sql4", array());
 // indicar que el resultado es JSON
 header("Content-type: application/json; charset=utf-8");
 // permitir acceso de otros lugares fuera del servidor
@@ -23,3 +29,10 @@ while ($fila = pg_fetch_assoc($resultado)) {
   array_push($gente, $fila);
 }
 echo json_encode($gente);
+
+$usuarios = array();
+while ($fila = pg_fetch_assoc($resultado1)) {
+  $fila["nombre"] = intval($fila["nombre"]);
+  array_push($usuarios, $fila);
+}
+echo json_encode($usuarios);
