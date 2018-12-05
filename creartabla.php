@@ -13,7 +13,13 @@ function getxd($insertar) {
   return $variable;
 }
 
+function get1xd($numeritos) {
+  $variablita = json_decode($_GET[$numeritos]);
+  return $variablita;
+}
+
 $asdfg = getxd("insertar");
+$asddsa = get1xd("numeritos");
 // preparar consultas
 pg_prepare($conexion, "sql1", 'DROP TABLE IF EXISTS datosunity');
 pg_prepare($conexion, "sql2", 'CREATE TABLE datosunity (nombre VARCHAR(30), numero INT)');
@@ -22,7 +28,7 @@ pg_prepare($conexion, "sql4", 'SELECT * FROM datosunity');
 // ejecutar consultas
 pg_execute($conexion, "sql1", array());
 pg_execute($conexion, "sql2", array());
-pg_execute($conexion, "sql3", array("$asdfg", 23));
+pg_execute($conexion, "sql3", array("$asdfg", "$asddsa"));
 $resultado = pg_execute($conexion, "sql4", array());
 // indicar que el resultado es JSON
 header("Content-type: application/json; charset=utf-8");
