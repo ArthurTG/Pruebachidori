@@ -21,14 +21,14 @@ header('Access-Control-Allow-Origin: *');
 // imprimir resultado
 $gente = array();
 while ($fila = pg_fetch_assoc($resultado)) {
-  $fila["numero"] = intval($fila["numero"]);
+  $fila["muertes"] = intval($fila["muertes"]);
   array_push($gente, $fila);
 }
 echo json_encode($gente);
 
 $usuarios = array();
 while ($fila = pg_fetch_assoc($resultado1)) {
-  $fila["nombre"] = intval($fila["nombre"]);
+  $fila["usuario"] = intval($fila["usuario"]);
   array_push($usuarios, $fila);
 }
 echo json_encode($usuarios);
