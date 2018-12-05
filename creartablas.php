@@ -8,7 +8,6 @@ $conexion = pg_connect(
   " user=" . $datos["user"] . 
   " password=" . $datos["pass"]);
 
-$asdfg = getxd("insertar");
 // preparar consultas
 pg_prepare($conexion, "sql2", 'CREATE TABLE XerathDatos (asesino VARCHAR(30), muertes INT)');
 pg_prepare($conexion, "sql3", 'CREATE TABLE XerathDatosxd (usuario VARCHAR(20), contrasena VARCHAR(20))');
