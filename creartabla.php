@@ -21,10 +21,10 @@ function get1xd($numeritos) {
 $asdfg = getxd("insertar");
 $asddsa = get1xd("numeritos");
 // preparar consultas
-pg_prepare($conexion, "sql1", 'DROP TABLE IF EXISTS datosunity');
-pg_prepare($conexion, "sql2", 'CREATE TABLE datosunity (nombre VARCHAR(30), numero INT)');
-pg_prepare($conexion, "sql3", 'INSERT INTO datosunity (nombre, numero) VALUES ($1, $2)');
-pg_prepare($conexion, "sql4", 'SELECT * FROM datosunity');
+pg_prepare($conexion, "sql1", 'DROP TABLE IF EXISTS XerathDatos');
+pg_prepare($conexion, "sql2", 'CREATE TABLE XerathDatos (nombre VARCHAR(30), numero INT)');
+pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatos (nombre, numero) VALUES ($1, $2)');
+pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
 // ejecutar consultas
 pg_execute($conexion, "sql1", array());
 pg_execute($conexion, "sql2", array());
