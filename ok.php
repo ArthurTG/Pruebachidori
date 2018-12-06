@@ -24,7 +24,7 @@ while ($fila = pg_fetch_assoc($resultado)) {
   $fila["muertes"] = intval($fila["muertes"]);
   array_push($gente, $fila);
 }
-echo json_encode($gente);
+//echo json_encode($gente);
 
 $usuarios = array();
 while ($fila1 = pg_fetch_assoc($resultado1)) {
