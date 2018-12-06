@@ -9,7 +9,7 @@ $conexion = pg_connect(
   " password=" . $datos["pass"]);
 // preparar consultas
 pg_prepare($conexion, "sql1", 'DROP TABLE IF EXISTS XerathDatos');
-pg_prepare($conexion, "sql2", 'DROP TABLE IF EXISTS XerathDatos');
+pg_prepare($conexion, "sql2", 'DROP TABLE IF EXISTS XerathDatosxd');
 // ejecutar consultas
 pg_execute($conexion, "sql1", array());
 pg_execute($conexion, "sql2", array());
