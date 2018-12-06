@@ -8,18 +8,18 @@ $conexion = pg_connect(
   " user=" . $datos["user"] . 
   " password=" . $datos["pass"]);
 
-function getxd($asesino) {
+function getase($asesino) {
   $variable = json_decode($_GET[$asesino]);
   return $variable;
 }
 
-function get1xd($numero) {
+function getnum($numero) {
   $variablita = json_decode($_GET[$numero]);
   return $variablita;
 }
 
-$asdfg = getxd("asesino");
-$asddsa = get1xd("numero");
+$asdfg = getase("asesino");
+$asddsa = getnum("numero");
 // preparar consultas
 pg_prepare($conexion, "insertar1", 'INSERT INTO XerathDatos (asesino, muertes) VALUES ($1, $2)');
 pg_prepare($conexion, "insertar2", 'SELECT * FROM XerathDatos');
