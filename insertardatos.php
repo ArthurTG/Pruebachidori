@@ -8,24 +8,24 @@ $conexion = pg_connect(
   " user=" . $datos["user"] . 
   " password=" . $datos["pass"]);
 
-function getxd($insertar) {
-  $variable = json_decode($_GET[$insertar]);
+function getxd($asesino) {
+  $variable = json_decode($_GET[$asesino]);
   return $variable;
 }
 
-function get1xd($numeritos) {
-  $variablita = json_decode($_GET[$numeritos]);
+function get1xd($numero) {
+  $variablita = json_decode($_GET[$numero]);
   return $variablita;
 }
 
-$asdfg = getxd("insertar");
-$asddsa = get1xd("numeritos");
+$asdfg = getxd("asesino");
+$asddsa = get1xd("numero");
 // preparar consultas
-pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatos (asesino, muertes) VALUES ($1, $2)');
-pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
+pg_prepare($conexion, "insertar1", 'INSERT INTO XerathDatos (asesino, muertes) VALUES ($1, $2)');
+pg_prepare($conexion, "insertar2", 'SELECT * FROM XerathDatos');
 // ejecutar consultas
-pg_execute($conexion, "sql3", array("$asdfg", "$asddsa"));
-$resultado = pg_execute($conexion, "sql4", array());
+pg_execute($conexion, "insertar1", array("$asdfg", "$asddsa"));
+$resultado = pg_execute($conexion, "insertar2", array());
 // indicar que el resultado es JSON
 header("Content-type: application/json; charset=utf-8");
 // permitir acceso de otros lugares fuera del servidor
