@@ -15,7 +15,7 @@ function get1xd($contrasena) {
   $variablita = json_decode($_GET[$contrasena]);
   return $variablita;
 }
-$asdfg = getxd("nombre");
+$asdfg = getxd("usuario");
 $asddsa = get1xd("contrasena");
 // preparar consultas
 pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatosxd (usuario, contrasena) VALUES ($1, $2)');
