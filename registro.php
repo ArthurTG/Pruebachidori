@@ -18,7 +18,7 @@ function get1xd($contrasena) {
 $asdfg = getxd("nombre");
 $asddsa = get1xd("contrasena");
 // preparar consultas
-pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatosxd (usuario, contraseña) VALUES ($1, $2)');
+pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatosxd (usuario, contrasena) VALUES ($1, $2)');
 pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
 // ejecutar consultas
 pg_execute($conexion, "sql3", array("$asdfg", "$asddsa"));
