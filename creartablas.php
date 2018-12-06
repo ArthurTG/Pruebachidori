@@ -9,11 +9,11 @@ $conexion = pg_connect(
   " password=" . $datos["pass"]);
 
 // preparar consultas
-pg_prepare($conexion, "sql2", 'CREATE TABLE XerathDatos (asesino VARCHAR(30), muertes INT)');
-pg_prepare($conexion, "sql3", 'CREATE TABLE XerathDatosxd (usuario VARCHAR(20), contrasena VARCHAR(20))');
+pg_prepare($conexion, "conexion1", 'CREATE TABLE XerathDatos (asesino VARCHAR(30), muertes INT)');
+pg_prepare($conexion, "conexion2", 'CREATE TABLE XerathDatosxd (usuario VARCHAR(20), contrasena VARCHAR(20))');
 // ejecutar consultas
-pg_execute($conexion, "sql2", array());
-pg_execute($conexion, "sql3", array());
+pg_execute($conexion, "conexion1", array());
+pg_execute($conexion, "conexion2", array());
 // indicar que el resultado es JSON
 header("Content-type: application/json; charset=utf-8");
 // permitir acceso de otros lugares fuera del servidor
