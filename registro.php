@@ -30,7 +30,6 @@ header('Access-Control-Allow-Origin: *');
 // imprimir resultado
 $gente = array();
 while ($fila = pg_fetch_assoc($resultado)) {
-  $fila["usuario"] = intval($fila["usuario"]);
   array_push($gente, $fila);
 }
 echo json_encode($gente);
