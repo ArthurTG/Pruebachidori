@@ -25,5 +25,5 @@ header('Access-Control-Allow-Origin: *');
 // imprimir resultado
 while ($mostrar = pg_fetch_assoc($resultado)) 
 {
-  echo $mostrar['asesino']
+  echo $mostrar['asesino'];
 } 
