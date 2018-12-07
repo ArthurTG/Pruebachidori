@@ -36,18 +36,10 @@ $conexion = pg_connect(
 		header('Access-Control-Allow-Origin: *');
 		
 		while($fila = pg_fetch_assoc($resultado))
-		{		
-			?>
-			<tr>
-				<td><?php echo $fila['asesino']?></td>
-				<td><?php echo $fila['X']?></td>
-				<td><?php echo $fila['Y']?></td>
-				<td><?php echo $fila['Z']?></td>
-			</tr>
-
-			<?php
+		{
+			echo $fila['asesino'];
 		}
-		?>
+			?>
 	</table>
 </body>
 </html>
