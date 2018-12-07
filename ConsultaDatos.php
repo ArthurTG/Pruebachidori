@@ -1,3 +1,15 @@
+<?
+$datos = parse_url($_ENV["DATABASE_URL"]);
+// conectarse
+$conexion = pg_connect(
+  "host=" . $datos["host"] . 
+  " port=" . $datos["port"] . 
+  " dbname=" . substr($datos["path"], 1) . 
+  " user=" . $datos["user"] . 
+  " password=" . $datos["pass"]);
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
