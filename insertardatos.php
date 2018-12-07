@@ -13,15 +13,15 @@ function getxd($insertar) {
   return $variable;
 }
 
-function get1xd($numeritos) {
-  $variablita = json_decode($_GET[$numeritos]);
+function get1xd($posX) {
+  $variablita = json_decode($_GET[$posX]);
   return $variablita;
 }
 
 $asdfg = getxd("insertar");
-$asddsa = get1xd("numeritos");
+$asddsa = get1xd("posX");
 // preparar consultas
-pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatos (asesino, muertes) VALUES ($1, $2)');
+pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatos (asesino, X) VALUES ($1, $2)');
 pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
 // ejecutar consultas
 pg_execute($conexion, "sql3", array("$asdfg", "$asddsa"));
