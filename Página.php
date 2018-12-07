@@ -24,5 +24,8 @@ $gente = array();
 while ($fila = pg_fetch_assoc($resultado)) 
 {
   array_push($gente, $fila);
-  echo json_encode($fila['x']);  
+  echo json_encode($fila['asesino']);  
+  echo json_encode($fila['x']);
+  echo json_encode($fila['y']);
+  echo json_encode($fila['z']);
 }
