@@ -24,4 +24,5 @@ while ($fila = pg_fetch_assoc($resultado1))
 {
   array_push($gente, $fila);
   echo json_encode($fila['usuario']);
+  echo json_encode($fila['puntuacion']);
 }
