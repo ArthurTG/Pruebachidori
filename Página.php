@@ -9,12 +9,12 @@ $conexion = pg_connect(
   " password=" . $datos["pass"]);
 
 // preparar consultas
-pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
-pg_prepare($conexion, "sql3", 'SELECT * FROM XerathDatosxd');
+pg_prepare($conexion, "sql3", 'SELECT * FROM XerathDatos');
+pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatosxd');
 
 // ejecutar consultas
-$resultado = pg_execute($conexion, "sql3", array());
-$resultado1 = pg_execute($conexion, "sql4", array());
+$resultado = pg_execute($conexion, "sql3");
+$resultado1 = pg_execute($conexion, "sql4");
 
 // indicar que el resultado es JSON
 header("Content-type: application/json; charset=utf-8");
@@ -23,8 +23,7 @@ header("Content-type: application/json; charset=utf-8");
 header('Access-Control-Allow-Origin: *');
 
 // imprimir resultado
-$gente = array();
-while ($fila = pg_fetch_assoc($resultado)) 
+while ($mostrar = pg_fetch_assoc($resultado)) 
 {
-  echo $fila['asesino'];
-}
+  echo $mostrar['asesino']
+} 
