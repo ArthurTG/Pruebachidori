@@ -23,10 +23,10 @@ $gente = array();
 while ($fila = pg_fetch_assoc($resultado)) {
   array_push($gente, $fila);
 }
-//echo json_encode($gente);
+echo json_encode($gente);
 
 $usuarios = array();
 while ($fila1 = pg_fetch_assoc($resultado1)) {
   array_push($usuarios, $fila1);
 }
-//echo json_encode($usuarios);
+echo json_encode($usuarios);
