@@ -30,3 +30,13 @@ while ($fila1 = pg_fetch_assoc($resultado1)) {
   array_push($usuarios, $fila1);
 }
 echo json_encode($usuarios);
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pagina</title>
+</head>
+<body>
+este es un ejemplo de heroku
+</body>
+</html>	
