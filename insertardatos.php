@@ -33,7 +33,6 @@ header('Access-Control-Allow-Origin: *');
 // imprimir resultado
 $gente = array();
 while ($fila = pg_fetch_assoc($resultado)) {
-  $fila["muertes"] = intval($fila["muertes"]);
   array_push($gente, $fila);
 }
 echo json_encode($gente);
