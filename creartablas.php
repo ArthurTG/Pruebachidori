@@ -10,7 +10,7 @@ $conexion = pg_connect(
 
 // preparar consultas
 pg_prepare($conexion, "conexion1", 'CREATE TABLE XerathDatos (asesino VARCHAR(30), muertes INT)');
-pg_prepare($conexion, "conexion2", 'CREATE TABLE XerathDatosxd (usuario VARCHAR(20), contrasena VARCHAR(20))');
+pg_prepare($conexion, "conexion2", 'CREATE TABLE XerathDatosxd (usuario VARCHAR(20), puntiacion INT)');
 // ejecutar consultas
 pg_execute($conexion, "conexion1", array());
 pg_execute($conexion, "conexion2", array());
