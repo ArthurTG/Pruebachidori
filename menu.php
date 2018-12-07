@@ -1,18 +1,27 @@
-<?php include 'constantes.php'; ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Usuarios Conectados</title>
-        <?php include 'html/estilos.html'; ?>
-    </head>
-    <body>
-        <div class="container">
-            <br/>
-            <h1>Usuarios Conectados</h1>
-            <hr class="my-4">
-            <div class="btn-group-vertical" id="conectados">
-            </div>
-        </div>
-        <script src="ajax.js"></script>
-    </body>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+    function ActializarJugadores()
+    {
+    	$.ajax({url: "ok.php", success: function(result)
+        {
+            $("#div1").html(result);
+        }});
+    }
+    setInterval(ActializarJugadores, 1000);
+
+});
+</script>
+</head>
+<body>
+
+<div><h2>Usuarios Conectados:</h2></div>
+<div id="div1"></div>
+
+
+</body>
 </html>
