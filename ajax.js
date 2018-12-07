@@ -1,25 +1,27 @@
-// texto de un boton
-var texto_boton = '<button type="button" class="btn btn-success"><i class="fas fa-user"></i> {n}</button>';
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function()
+{
+    function ActializarJugadores()
+    {
+    	$.ajax({url: "ok.php", success: function(result)
+        {
+            $("#div1").html(result);
+        }});
+    }
+    setInterval(ActializarJugadores, 1000);
 
-// repetir la funcion constantemente
-setInterval(revisar_conectados, 3000);
+});
+</script>
+</head>
+<body>
 
-// ejecutar la funcion al principio
-revisar_conectados();
+<div><h2>Usuarios Conectados:</h2></div>
+<div id="div1"></div>
 
-// hacer llamada ajax
-function revisar_conectados() {
-    $.ajax("ok.php")
-            .done(function (respuesta) {
-                var r = JSON.parse(respuesta);
-                $("#conectados").html("");
-                if (r.exito === true) {
-                    for (var i = 0; i < r.datos.length; i++) {
-                        $("#conectados").append(texto_boton.replace('{n}',
-                                r.datos[i].nombre));
-                    }
-                } else {
-                    $("#conectados").text(r.mensaje);
-                }
-            });
-}
+
+</body>
+</html>
