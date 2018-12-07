@@ -26,5 +26,5 @@ header('Access-Control-Allow-Origin: *');
 $gente = array();
 while ($fila = pg_fetch_assoc($resultado)) 
 {
-  //echo fila['asesino'];
+  echo $fila['asesino'];
 }
