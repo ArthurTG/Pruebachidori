@@ -11,13 +11,11 @@
 			<td>Coordenada Y</td>
 			<td>Coordenada Z</td>
 		</tr>
-		
-		
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td>minion</td>
+			<td>12</td>
+			<td>34</td>
+			<td>57</td>
 		</tr>
 	</table>
 </body>
