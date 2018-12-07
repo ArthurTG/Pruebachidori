@@ -20,9 +20,8 @@ header("Content-type: application/json; charset=utf-8");
 header('Access-Control-Allow-Origin: *');
 // imprimir resultado
 $gente = array();
-while ($fila = pg_fetch_assoc($resultado)) 
+while ($fila = pg_fetch_assoc($resultado1)) 
 {
   array_push($gente, $fila);
-  echo json_encode($fila['asesino']);
-  echo $fila['X'];
+  echo json_encode($fila['usuario']);
 }
