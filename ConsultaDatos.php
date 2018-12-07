@@ -35,8 +35,6 @@ header('Access-Control-Allow-Origin: *');
 			<td>Coordenada Z</td>
 		</tr>
 		
-		<?
-		?>
 		
 		<tr>
 			<td></td>
