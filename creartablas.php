@@ -9,7 +9,7 @@ $conexion = pg_connect(
   " password=" . $datos["pass"]);
 
 // preparar consultas
-pg_prepare($conexion, "conexion1", 'CREATE TABLE XerathDatos (asesino VARCHAR(30), muertes INT)');
+pg_prepare($conexion, "conexion1", 'CREATE TABLE XerathDatos (asesino VARCHAR(30), X INT)');
 pg_prepare($conexion, "conexion2", 'CREATE TABLE XerathDatosxd (usuario VARCHAR(20), puntuacion INT)');
 // ejecutar consultas
 pg_execute($conexion, "conexion1", array());
