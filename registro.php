@@ -11,14 +11,14 @@ function getxd($usuario) {
   $variable = json_decode($_GET[$usuario]);
   return $variable;
 }
-function get1xd($contrasena) {
-  $variablita = json_decode($_GET[$contrasena]);
+function get1xd($puntuacion) {
+  $variablita = json_decode($_GET[$puntuacion]);
   return $variablita;
 }
 $asdfg = getxd("usuario");
-$asddsa = get1xd("contrasena");
+$asddsa = get1xd("puntuacion");
 // preparar consultas
-pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatosxd (usuario, contrasena) VALUES ($1, $2)');
+pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatosxd (usuario, puntuacion) VALUES ($1, $2)');
 pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatosxd');
 // ejecutar consultas
 pg_execute($conexion, "sql3", array("$asdfg", "$asddsa"));
