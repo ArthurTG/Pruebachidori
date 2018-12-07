@@ -18,13 +18,26 @@ function get1xd($posX) {
   return $variablita;
 }
 
+function get2xd($posY) {
+  $variablita2 = json_decode($_GET[$posY]);
+  return $variablita2;
+}
+
+function get3xd($posZ) {
+  $variablita3 = json_decode($_GET[$posZ]);
+  return $variablita3;
+}
+
 $asdfg = getxd("insertar");
 $asddsa = get1xd("posX");
+$asddsa2 = get2xd("posY");
+$asddsa3 = get3xd("posZ");
+
 // preparar consultas
-pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatos (asesino, X) VALUES ($1, $2)');
+pg_prepare($conexion, "sql3", 'INSERT INTO XerathDatos (asesino, X, Y, Z) VALUES ($1, $2, $3, $4)');
 pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
 // ejecutar consultas
-pg_execute($conexion, "sql3", array("$asdfg", "$asddsa"));
+pg_execute($conexion, "sql3", array("$asdfg", "$asddsa", "$asddsa2", "$asddsa3"));
 $resultado = pg_execute($conexion, "sql4", array());
 // indicar que el resultado es JSON
 header("Content-type: application/json; charset=utf-8");
