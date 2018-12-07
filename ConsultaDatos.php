@@ -35,7 +35,7 @@ header('Access-Control-Allow-Origin: *');
 			<td>Coordenada Z</td>
 		</tr>
 		
-		<?php
+		<?
 		?>
 		
 		<tr>
