@@ -18,11 +18,11 @@ $resultado1 = pg_execute($conexion, "sql4", array());
 header("Content-type: application/json; charset=utf-8");
 // permitir acceso de otros lugares fuera del servidor
 header('Access-Control-Allow-Origin: *');
+
 // imprimir resultado
 $gente = array();
-while ($fila = pg_fetch_assoc($resultado1)) 
+while ($fila = pg_fetch_assoc($resultado)) 
 {
   array_push($gente, $fila);
-  echo json_encode($fila['usuario']);
-  echo json_encode($fila['puntuacion']);
+  echo json_encode($fila['X']);  
 }
