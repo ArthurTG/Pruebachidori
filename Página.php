@@ -8,38 +8,23 @@ $conexion = pg_connect(
   " user=" . $datos["user"] . 
   " password=" . $datos["pass"]);
 
-?>
-	
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Página</title>
-</head>
-<body>
-	<table border="1">
-		<tr>
-			<td>Asesino</td>
-			<td>Coordenada X</td>
-			<td>Coordenada Y</td>
-			<td>Coordenada Z</td>
-		</tr>
-		
-		<?php
-		// preparar consultas
-		pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
-		// ejecutar consultas
-		$resultado = pg_execute($conexion, "sql4");
-		
-		// indicar que el resultado es JSON
-		header("Content-type: application/json; charset=utf-8");
-		// permitir acceso de otros lugares fuera del servidor
-		header('Access-Control-Allow-Origin: *');
-		
-		while($fila = pg_fetch_assoc($resultado))
-		{
-			echo $fila['asesino'];
-		}
-			?>
-	</table>
-</body>
-</html>
+// preparar consultas
+pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
+pg_prepare($conexion, "sql3", 'SELECT * FROM XerathDatosxd');
+
+// ejecutar consultas
+$resultado = pg_execute($conexion, "sql3", array());
+$resultado1 = pg_execute($conexion, "sql4", array());
+
+// indicar que el resultado es JSON
+header("Content-type: application/json; charset=utf-8");
+
+// permitir acceso de otros lugares fuera del servidor
+header('Access-Control-Allow-Origin: *');
+
+// imprimir resultado
+$gente = array();
+while ($fila = pg_fetch_assoc($resultado)) 
+{
+  echo fila['asesino'];
+}
