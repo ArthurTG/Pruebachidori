@@ -39,20 +39,24 @@ $conexion = pg_connect(
 		
 		
 		<tr>
-			<td><? echo $resultado1['usuario']?></td>
-			<td><? echo $resultado1['puntuacion']?></td>
+			<td><? echo $resultado1['usuario'];?></td>
+			<td><? echo $resultado1['puntuacion'];?></td>
 			
 		<?
 			}
+			$gente = array();
+			while ($fila = pg_fetch_assoc($resultado)) 
+			{
+			  array_push($gente, $fila);
 		?>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><? echo $fila['asesino']; ?></td>
+			<td><? echo $fila['x']; ?></td>
+			<td><? echo $fila['y']; ?></td>
+			<td><? echo $fila['z']; ?></td>
 		</tr>
-		
-		
-		
+		<?
+			}
+		?>		
 	</table>
 </body>
 </html>
