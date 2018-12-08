@@ -12,9 +12,14 @@ $conexion = pg_connect(
 <html>
 <head>
 	<title>Consulta de Datos</title>
-	
+	<style type="text/css">
+		#hola
+		{
+			background-color: #629BCD;
+		}
+	</style>
 </head>
-<body>
+<body id="hola">
 	<center>
 	<table border="1">
 		<tr>
