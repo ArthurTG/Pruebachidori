@@ -11,7 +11,7 @@ $conexion = pg_connect(
 <!DOCTYPE html>
 <html>
 <head>
-	<title>askdfjadf</title>
+	<title>Consulta de Datos</title>
 </head>
 <body>
 	<table border="1">
@@ -21,11 +21,15 @@ $conexion = pg_connect(
 			<td>Coordenada Y</td>
 			<td>Coordenada Z</td>
 		</tr>
+		
+		<?
+		?>
+		
 		<tr>
-			<td>minion</td>
-			<td>12</td>
-			<td>34</td>
-			<td>57</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
 	</table>
 </body>
