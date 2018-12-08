@@ -16,6 +16,7 @@ $conexion = pg_connect(
 <body>
 	<table border="1">
 		<tr>
+			<td>Jugadpr</td>
 			<td>Asesino</td>
 			<td>Coordenada X</td>
 			<td>Coordenada Y</td>
@@ -28,23 +29,17 @@ $conexion = pg_connect(
 			$resultado = pg_execute($conexion, "sql3", array());
 			$resultado1 = pg_execute($conexion, "sql4", array());
 			header('Access-Control-Allow-Origin: *');
-		
-			$gente = array();
-			while ($fila = pg_fetch_assoc($resultado)) 
-			{
-			  array_push($gente, $fila);
 		?>
 		
 		<tr>
-			<td><? echo $fila['asesino']; ?></td>
-			<td><? echo $fila['x']; ?></td>
-			<td><? echo $fila['y']; ?></td>
-			<td><? echo $fila['z']; ?></td>
-		<?
-			}
-		?>
-			<td>asdf</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
 		</tr>
+		
+		
 		
 	</table>
 </body>
