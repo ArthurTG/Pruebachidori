@@ -12,8 +12,10 @@ $conexion = pg_connect(
 <html>
 <head>
 	<title>Consulta de Datos</title>
+	
 </head>
 <body>
+	<center>
 	<table border="1">
 		<tr>
 			<td>Jugador</td>
@@ -58,5 +60,6 @@ $conexion = pg_connect(
 			}
 		?>		
 	</table>
+	</center>
 </body>
 </html>
