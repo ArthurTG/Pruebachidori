@@ -23,6 +23,9 @@ $conexion = pg_connect(
 		</tr>
 		
 		<?
+			// preparar consultas
+			pg_prepare($conexion, "sql3", 'SELECT * FROM XerathDatos');
+			pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatosxd');
 		?>
 		
 		<tr>
