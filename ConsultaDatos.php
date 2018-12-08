@@ -25,7 +25,7 @@ $conexion = pg_connect(
 		<?
 			pg_prepare($conexion, "sql3", 'SELECT * FROM XerathDatos');
 			$resultado = pg_execute($conexion, "sql3", array());
-			header("Content-type: application/json; charset=utf-8");
+			header('Access-Control-Allow-Origin: *');
 		?>
 		
 		<tr>
