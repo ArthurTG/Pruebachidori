@@ -26,6 +26,10 @@ $conexion = pg_connect(
 			pg_prepare($conexion, "sql3", 'SELECT * FROM XerathDatos');
 			$resultado = pg_execute($conexion, "sql3", array());
 			header('Access-Control-Allow-Origin: *');
+			$gente = array();
+			while ($fila = pg_fetch_assoc($resultado)) 
+			{
+			  array_push($gente, $fila);
 		?>
 		
 		<tr>
@@ -34,6 +38,10 @@ $conexion = pg_connect(
 			<td></td>
 			<td></td>
 		</tr>
+		<?
+			}
+		?>
+		
 	</table>
 </body>
 </html>
