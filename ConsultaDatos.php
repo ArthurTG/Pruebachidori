@@ -49,8 +49,8 @@ $conexion = pg_connect(
 		
 		
 		<tr>
-			<td id="tabla"> <? echo $fila['usuario']?> </td>
-			<td id="tabla"> <? echo $fila['puntuacion']?> </td>
+			<td id="tabla"> <? echo $fila1['usuario']?> </td>
+			<td id="tabla"> <? echo $fila1['puntuacion']?> </td>
 			
 		<?
 			}
