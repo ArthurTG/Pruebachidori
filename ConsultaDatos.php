@@ -17,7 +17,7 @@ $conexion = pg_connect(
 		{
 			background-color: #629BCD;
 		}
-		#tabla
+		#tabla1
 		{
 			text-align: center;
 			float: left;
@@ -27,7 +27,7 @@ $conexion = pg_connect(
 <body id="hola">
 	<center>
 		
-	<table id="tabla" border="1">
+	<table id="tabla1" border="1">
 		<tr>
 			<td>Jugador</td>
 			<td>Puntuación</td>
@@ -52,7 +52,7 @@ $conexion = pg_connect(
 		?>		
 	</table>
 		
-	<table id="tabla" border="1">
+	<table id="tabla1" border="1">
 		<tr>
 			<td>Asesino</td>
 			<td>Coordenada X</td>
