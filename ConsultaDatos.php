@@ -33,10 +33,10 @@ $conexion = pg_connect(
 		?>
 		
 		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+			<td><? echo $fila['asesino']; ?></td>
+			<td><? echo $fila['x']; ?></td>
+			<td><? echo $fila['y']; ?></td>
+			<td><? echo $fila['z']; ?></td>
 		</tr>
 		<?
 			}
