@@ -28,10 +28,6 @@ $conexion = pg_connect(
 		<tr>
 			<td>Jugador</td>
 			<td>Puntuación</td>
-			<td>Asesino</td>
-			<td>Coordenada X</td>
-			<td>Coordenada Y</td>
-			<td>Coordenada Z</td>
 		</tr>
 		
 		<?
@@ -40,8 +36,24 @@ $conexion = pg_connect(
 			$resultado = pg_execute($conexion, "sql3", array());
 			$resultado1 = pg_execute($conexion, "sql4", array());
 			header('Access-Control-Allow-Origin: *');
+			
+			$usuarios = array();
+			while ($fila1 = pg_fetch_assoc($resultado1)) 
+			{
+			  array_push($usuarios, $fila1);		
+		?>
 		
-			?>	
+		
+		<tr>
+			<td id="tabla"> <? echo $fila1['usuario']?> </td>
+			<td id="tabla"> <? echo $fila1['puntuacion']?> </td>
+		</tr>
+			
+		<?
+			}
+		?>
+		
+		
 	</table>
 	</center>
 </body>
