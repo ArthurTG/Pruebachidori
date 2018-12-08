@@ -24,8 +24,11 @@ $conexion = pg_connect(
 		
 		<?
 			pg_prepare($conexion, "sql3", 'SELECT * FROM XerathDatos');
+			pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatosxd');
 			$resultado = pg_execute($conexion, "sql3", array());
+			$resultado1 = pg_execute($conexion, "sql4", array());
 			header('Access-Control-Allow-Origin: *');
+		
 			$gente = array();
 			while ($fila = pg_fetch_assoc($resultado)) 
 			{
@@ -37,10 +40,11 @@ $conexion = pg_connect(
 			<td><? echo $fila['x']; ?></td>
 			<td><? echo $fila['y']; ?></td>
 			<td><? echo $fila['z']; ?></td>
-		</tr>
 		<?
 			}
 		?>
+			<td>asdf</td>
+		</tr>
 		
 	</table>
 </body>
