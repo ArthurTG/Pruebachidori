@@ -46,20 +46,37 @@ $conexion = pg_connect(
 		<?
 			pg_prepare($conexion, "sql3", 'SELECT * FROM XerathDatosxd');
 			$resultado = pg_execute($conexion, "sql3", array());
+		
+			pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
+			$resultado1 = pg_execute($conexion, "sql4", array());
+			
 			header('Access-Control-Allow-Origin: *');
 			
+			//Primera tabla
 			$usuarios = array();
 			while ($fila1 = pg_fetch_assoc($resultado)) 
 			{
-			  array_push($usuarios, $fila1);		
+			  	array_push($usuarios, $fila1);		
 		?>		
 		<tr>
-			<td id="tabla"><? echo $fila1['usuario']?> </td>
-			<td id="tabla"><? echo $fila1['puntuacion']?> </td>
+				<td id="tabla"><? echo $fila1['usuario']?> </td>
+				<td id="tabla"><? echo $fila1['puntuacion']?> </td>
+		<?
+			}
+		
+			//Segunda tabla
+			gente = array();
+			while ($fila = pg_fetch_assoc($resultado1)) 
+			{
+			 	array_push($gente, $fila);				
+		?>
+				<td id="tabla"><? echo $fila['asesino']; ?></td>
+				<td id="tabla"><? echo $fila['x']; ?></td>
+				<td id="tabla"><? echo $fila['y']; ?></td>
+				<td id="tabla"><? echo $fila['z']; ?></td>
 		<?
 			}
 		?>
-			
 		</tr>
 	</table>
 	</div>
