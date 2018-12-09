@@ -15,23 +15,26 @@ $conexion = pg_connect(
 	<style type="text/css">
 		#hola
 		{
-			background-color: #629BCD;
+			background-color: gray;
 		}
 		#tabla1
 		{
+			background-color: #629BCD;
 			text-align: center;
 			float: left;
 		}
 		#div1
 		{
-			padding: 4rem;
+			padding: 5rem;
 			width: 700px;
+
 		}
-		
 	</style>
+
 </head>
 <body id="hola">
-	<div>
+	<center>
+	<div id="div1">
 	<table id="tabla1" border="1">
 		<tr>
 			<td>Jugador</td>
@@ -48,8 +51,8 @@ $conexion = pg_connect(
 			  array_push($usuarios, $fila1);		
 		?>		
 		<tr>
-			<td id="tabla"> <? echo $fila1['usuario']?> </td>
-			<td id="tabla"> <? echo $fila1['puntuacion']?> </td>
+			<td id="tabla"><? echo $fila1['usuario']?> </td>
+			<td id="tabla"><? echo $fila1['puntuacion']?> </td>
 		</tr>
 			
 		<?
@@ -74,6 +77,7 @@ $conexion = pg_connect(
 			{
 			  array_push($gente, $fila);
 		?>
+		<tr>
 			<td id="tabla"><? echo $fila['asesino']; ?></td>
 			<td id="tabla"><? echo $fila['x']; ?></td>
 			<td id="tabla"><? echo $fila['y']; ?></td>
@@ -84,5 +88,6 @@ $conexion = pg_connect(
 		?>	
 	</table>
 	</div>
+</center>
 </body>
 </html>
