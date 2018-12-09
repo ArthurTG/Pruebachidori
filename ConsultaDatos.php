@@ -21,6 +21,7 @@ $conexion = pg_connect(
 		{
 			background-color: #629BCD;
 			text-align: center;
+			float: left;
 		}
 		#div1
 		{
@@ -50,29 +51,16 @@ $conexion = pg_connect(
 			$resultado1 = pg_execute($conexion, "sql4", array());
 			
 			header('Access-Control-Allow-Origin: *');
-			?>
-				
-		<tr>
-		<?
+			
 			//Primera tabla
 			$usuarios = array();
 			while ($fila1 = pg_fetch_assoc($resultado)) 
 			{
 			  	array_push($usuarios, $fila1);		
-		?>
+		?>		
+		<tr>
 				<td id="tabla"><? echo $fila1['usuario']?> </td>
 				<td id="tabla"><? echo $fila1['puntuacion']?> </td>
-		<?
-			}
-			$gente = array();
-			while ($fila = pg_fetch_assoc($resultado1)) 
-			{
-			  array_push($gente, $fila);
-		?>
-			<td id="tabla"><? echo $fila['asesino']; ?></td>
-			<td id="tabla"><? echo $fila['x']; ?></td>
-			<td id="tabla"><? echo $fila['y']; ?></td>
-			<td id="tabla"><? echo $fila['z']; ?></td>
 		<?
 			}
 		?>
