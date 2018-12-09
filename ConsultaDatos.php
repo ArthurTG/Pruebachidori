@@ -67,6 +67,9 @@ $conexion = pg_connect(
 			while ($fila = pg_fetch_assoc($resultado1)) 
 			{
 			  array_push($gente, $fila);
+		?>
+			
+		<?
 			}
 		?>
 			
