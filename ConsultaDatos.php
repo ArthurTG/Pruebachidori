@@ -26,7 +26,7 @@ $conexion = pg_connect(
 		#div1
 		{
 			padding: 5rem;
-			width: 494px;
+			width: 600px;
 
 		}
 	</style>
