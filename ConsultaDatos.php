@@ -21,7 +21,6 @@ $conexion = pg_connect(
 		{
 			background-color: #629BCD;
 			text-align: center;
-			float: left;
 		}
 		#div1
 		{
