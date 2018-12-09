@@ -24,7 +24,8 @@ $conexion = pg_connect(
 		}
 	</style>
 </head>
-<body id="hola">		
+<body id="hola">
+	<div>
 	<table id="tabla1" border="1">
 		<tr>
 			<td>Jugador</td>
@@ -76,5 +77,6 @@ $conexion = pg_connect(
 			}
 		?>	
 	</table>
+	</div>
 </body>
 </html>
