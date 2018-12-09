@@ -60,6 +60,10 @@ $conexion = pg_connect(
 		<?
 			}
 		?>	
+		<tr>
+			<td id="tabla"><? echo $fila1['usuario']?> </td>
+			<td id="tabla"><? echo $fila1['puntuacion']?> </td>
+		</tr>
 	</table>
 	</div>
 </center>
