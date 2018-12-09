@@ -22,6 +22,12 @@ $conexion = pg_connect(
 			text-align: center;
 			float: left;
 		}
+		#div1
+		{
+			padding: 4rem;
+			width: 700px;
+		}
+		
 	</style>
 </head>
 <body id="hola">
