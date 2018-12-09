@@ -54,9 +54,9 @@ $conexion = pg_connect(
 			
 			
 			$usuarios = array();
-			while ($fila1 = pg_fetch_assoc($resultado) && $fila = pg_fetch_assoc($resultado1)) 
+			while ($fila1 = pg_fetch_assoc($resultado)) 
 			{
-			  	array_push($usuarios, $fila1, $fila);	
+			  	array_push($usuarios, $fila1);	
 		?>			
 		<tr>
 				<td id="tabla"><? echo $fila1['usuario']?> </td>
