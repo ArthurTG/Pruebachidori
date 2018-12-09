@@ -73,10 +73,10 @@ $conexion = pg_connect(
 				<td id="tabla"><? echo $fila['x']; ?></td>
 				<td id="tabla"><? echo $fila['y']; ?></td>
 				<td id="tabla"><? echo $fila['z']; ?></td>
+			</tr>
 		<?
 			}	
 		?>		
-			</tr>
 	</table>
 	</div>
 </center>
