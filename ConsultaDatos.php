@@ -63,7 +63,13 @@ $conexion = pg_connect(
 				<td id="tabla"><? echo $fila1['puntuacion']?> </td>
 		<?
 			}
+			$gente = array();
+			while ($fila = pg_fetch_assoc($resultado1)) 
+			{
+			  array_push($gente, $fila);
+			}
 		?>
+			
 		</tr>
 	</table>
 	</div>
