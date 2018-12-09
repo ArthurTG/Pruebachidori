@@ -52,11 +52,13 @@ $conexion = pg_connect(
 			
 			header('Access-Control-Allow-Origin: *');
 			
-			//Primera tabla
+			
 			$usuarios = array();
-			while ($fila1 = pg_fetch_assoc($resultado)) 
+			$gente = array();
+			while ($fila1 = pg_fetch_assoc($resultado) || $fila = pg_fetch_assoc($resultado1)) 
 			{
-			  	array_push($usuarios, $fila1);		
+			  	array_push($usuarios, $fila1);	
+				array_push($gente, $fila);
 		?>			
 		<tr>
 				<td id="tabla"><? echo $fila1['usuario']?> </td>
