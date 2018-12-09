@@ -53,34 +53,6 @@ $conexion = pg_connect(
 			<td id="tabla"><? echo $fila1['usuario']?> </td>
 			<td id="tabla"><? echo $fila1['puntuacion']?> </td>
 		</tr>
-			
-		<?
-			}
-		?>		
-	</table>
-		
-	<table id="tabla1" border="1">
-		<tr>
-			<td>Asesino</td>
-			<td>Coordenada X</td>
-			<td>Coordenada Y</td>
-			<td>Coordenada Z</td>
-		</tr>		
-		<?
-			pg_prepare($conexion, "sql4", 'SELECT * FROM XerathDatos');
-			$resultado1 = pg_execute($conexion, "sql4", array());
-			header('Access-Control-Allow-Origin: *');
-			
-			$gente = array();
-			while ($fila = pg_fetch_assoc($resultado1)) 
-			{
-			  array_push($gente, $fila);
-		?>
-			<td id="tabla"><? echo $fila['asesino']; ?></td>
-			<td id="tabla"><? echo $fila['x']; ?></td>
-			<td id="tabla"><? echo $fila['y']; ?></td>
-			<td id="tabla"><? echo $fila['z']; ?></td>
-		</tr>
 		<?
 			}
 		?>	
