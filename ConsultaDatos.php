@@ -51,6 +51,10 @@ $conexion = pg_connect(
 			$resultado1 = pg_execute($conexion, "sql4", array());
 			
 			header('Access-Control-Allow-Origin: *');
+		?>
+		
+		<tr>
+		<?
 			
 			//Primera tabla
 			$usuarios = array();
@@ -58,7 +62,6 @@ $conexion = pg_connect(
 			{
 			  	array_push($usuarios, $fila1);		
 		?>		
-		<tr>
 				<td id="tabla"><? echo $fila1['usuario']?> </td>
 				<td id="tabla"><? echo $fila1['puntuacion']?> </td>
 		<?
