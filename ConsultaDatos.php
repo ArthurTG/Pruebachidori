@@ -38,6 +38,10 @@ $conexion = pg_connect(
 		<tr>
 			<td>Jugador</td>
 			<td>Puntuación</td>
+			<td>Asesino</td>
+			<td>Coordenada X</td>
+			<td>Coordenada Y</td>
+			<td>Coordenada Z</td>
 		</tr>		
 		<?
 			pg_prepare($conexion, "sql3", 'SELECT * FROM XerathDatosxd');
