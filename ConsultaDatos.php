@@ -63,19 +63,6 @@ $conexion = pg_connect(
 				<td id="tabla"><? echo $fila1['puntuacion']?> </td>
 		<?
 			}
-		
-			//Segunda tabla
-			gente = array();
-			while ($fila = pg_fetch_assoc($resultado1)) 
-			{
-			 	array_push($gente, $fila);				
-		?>
-				<td id="tabla"><? echo $fila['asesino']; ?></td>
-				<td id="tabla"><? echo $fila['x']; ?></td>
-				<td id="tabla"><? echo $fila['y']; ?></td>
-				<td id="tabla"><? echo $fila['z']; ?></td>
-		<?
-			}
 		?>
 		</tr>
 	</table>
