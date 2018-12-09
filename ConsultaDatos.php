@@ -69,15 +69,13 @@ $conexion = pg_connect(
 			{
 			  array_push($gente, $fila);
 		?>	
-			<tr>
 				<td id="tabla"><? echo $fila['asesino']; ?></td>
 				<td id="tabla"><? echo $fila['x']; ?></td>
 				<td id="tabla"><? echo $fila['y']; ?></td>
 				<td id="tabla"><? echo $fila['z']; ?></td>
 		<?
 			}	
-		?>
-			</tr>			
+		?>		
 			</tr>
 	</table>
 	</div>
